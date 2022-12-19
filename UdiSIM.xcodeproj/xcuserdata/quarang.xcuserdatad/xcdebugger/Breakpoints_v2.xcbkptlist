@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "BEE0C7B6-2FED-47E8-A1CD-3DAD5A3B737F"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1ED5D03C-859F-42E2-AEBE-8344C5B76271"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UdiSIM/PhotoPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF163BF3-FFB3-4C77-B162-DC91774F5DD7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UdiSIM/ChatView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "map"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "CF163BF3-FFB3-4C77-B162-DC91774F5DD7 - da4cb5b00f26ed82"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (UdiSIM.Location) -&gt; _MapKit_SwiftUI.MapAnnotation&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.shadow(color: SwiftUI.Color, radius: CoreGraphics.CGFloat, x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.shadow(color: SwiftUI.Color, radius: CoreGraphics.CGFloat, x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0&gt;&gt; in UdiSIM.ChatView.map.getter : some"
+                  moduleName = "UdiSIM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quarang/Documents/QUARANG&apos;S/Project/UdiSIM_Project/UdiSIM/UdiSIM/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "CF163BF3-FFB3-4C77-B162-DC91774F5DD7 - 2d83489875afe294"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.shadow(color: SwiftUI.Color, radius: CoreGraphics.CGFloat, x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.shadow(color: SwiftUI.Color, radius: CoreGraphics.CGFloat, x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0&gt; in closure #3 (UdiSIM.Location) -&gt; _MapKit_SwiftUI.MapAnnotation&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.shadow(color: SwiftUI.Color, radius: CoreGraphics.CGFloat, x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.shadow(color: SwiftUI.Color, radius: CoreGraphics.CGFloat, x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0&gt;&gt; in UdiSIM.ChatView.map.getter : some"
+                  moduleName = "UdiSIM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quarang/Documents/QUARANG&apos;S/Project/UdiSIM_Project/UdiSIM/UdiSIM/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55578037-ADC4-4AB3-8A5E-23194FF9C25E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UdiSIM/ChatView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "map"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27853E8D-53AF-460E-B522-4989AFCB968F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UdiSIM/ChatView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "map"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "27853E8D-53AF-460E-B522-4989AFCB968F - b5781ea947c72832"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UdiSIM.ChatView.map.getter : some"
+                  moduleName = "UdiSIM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quarang/Documents/QUARANG&apos;S/Project/UdiSIM_Project/UdiSIM/UdiSIM/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "776">
+               </Location>
+               <Location
+                  uuid = "27853E8D-53AF-460E-B522-4989AFCB968F - 8f7c8d094c6d97a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.MKCoordinateRegion, SwiftUI.Transaction) -&gt; () in UdiSIM.ChatView.map.getter : some"
+                  moduleName = "UdiSIM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quarang/Documents/QUARANG&apos;S/Project/UdiSIM_Project/UdiSIM/UdiSIM/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "336">
+               </Location>
+               <Location
+                  uuid = "27853E8D-53AF-460E-B522-4989AFCB968F - da4cb5b00f26ed82"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (UdiSIM.Location) -&gt; _MapKit_SwiftUI.MapAnnotation&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.shadow(color: SwiftUI.Color, radius: CoreGraphics.CGFloat, x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.shadow(color: SwiftUI.Color, radius: CoreGraphics.CGFloat, x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0&gt;&gt; in UdiSIM.ChatView.map.getter : some"
+                  moduleName = "UdiSIM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quarang/Documents/QUARANG&apos;S/Project/UdiSIM_Project/UdiSIM/UdiSIM/ChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
