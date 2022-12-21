@@ -52,7 +52,7 @@ class ChatViewModel:ObservableObject{
         
     }
    
-    func newChat(vm:MapViewModel){
+    @MainActor func newChat(vm:MapViewModel){
        
         
         guard let sendId = Auth.auth().currentUser?.uid else{return}
@@ -118,7 +118,7 @@ class ChatViewModel:ObservableObject{
         }
     }
     
-    func recentLocation(vm:MapViewModel){
+    @MainActor func recentLocation(vm:MapViewModel){
         let findLocation = CLLocation(latitude: vm.mapCoordinate.latitude, longitude: vm.mapCoordinate.longitude)
         let geocoder = CLGeocoder()
         let locale = Locale(identifier: "Ko-kr") //원하는 언어의 나라 코드를 넣어주시면 됩니다.

@@ -59,7 +59,9 @@ extension ChatView{
         Map(coordinateRegion:Binding(get: {
             vm.mapRegion
         }, set: { newValue, _ in
-            vm.mapRegion = newValue
+            DispatchQueue.main.async {
+                vm.mapRegion = newValue
+            }
         }), showsUserLocation: true, annotationItems: vmChat.location) { item in
             MapAnnotation(coordinate: item.coordinate){
                 if item.sendId == Auth.auth().currentUser?.uid {

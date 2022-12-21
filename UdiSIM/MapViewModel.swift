@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
+@MainActor
 final class MapViewModel:NSObject,CLLocationManagerDelegate,ObservableObject{
     
     var manager = CLLocationManager()
@@ -41,8 +42,8 @@ final class MapViewModel:NSObject,CLLocationManagerDelegate,ObservableObject{
         case .authorizedAlways, .authorizedWhenInUse:
             DispatchQueue.main.async {
                 withAnimation(.easeOut){
-                    self.mapCoordinate = self.manager.location!.coordinate
-                    self.mapRegion = MKCoordinateRegion(center: self.mapCoordinate, span: self.mySpan)
+                        self.mapCoordinate = self.manager.location!.coordinate
+                        self.mapRegion = MKCoordinateRegion(center: self.mapCoordinate, span: self.mySpan)
                 }
             }
         @unknown default:
