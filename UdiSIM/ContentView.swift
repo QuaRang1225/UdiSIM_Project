@@ -13,7 +13,7 @@ struct ContentView: View {
     @EnvironmentObject var vm:AuthenticationViewModel
     
     var body: some View {
-        Group{
+        NavigationStack{
             ZStack{
                 if logoAnimation{
                     if vm.userSession == nil{
@@ -25,7 +25,6 @@ struct ContentView: View {
                     StartView()
                 }
             }
-           
         }
         .onAppear{
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {

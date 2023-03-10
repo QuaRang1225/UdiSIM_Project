@@ -10,11 +10,10 @@ import FirebaseFirestoreSwift
 
 struct Recent:Codable,Identifiable{
     
-    @DocumentID var id:String?
+    @DocumentID var id:String? = UUID().uuidString
     
     let sendId,receiveId:String
     let location,name:String
-     //   let email,password
     let profileImageUrl:String
     let timestamp:Timestamp
     

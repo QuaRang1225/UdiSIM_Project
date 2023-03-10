@@ -9,10 +9,10 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-@MainActor
+
 final class MapViewModel:NSObject,CLLocationManagerDelegate,ObservableObject{
     
-    var manager = CLLocationManager()
+    private var manager = CLLocationManager()
     var mySpan = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
     
     @Published var mapRegion = MKCoordinateRegion()
@@ -22,13 +22,15 @@ final class MapViewModel:NSObject,CLLocationManagerDelegate,ObservableObject{
         super.init()
         manager.delegate = self
     }
-    
+ 
     func cheackLocation(){
-        if CLLocationManager.locationServicesEnabled(){
-            self.manager = CLLocationManager()
-            self.manager.delegate = self
-        }else{
-            print("지도가 꺼져있음")
+        DispatchQueue.main.async {
+            if CLLocationManager.locationServicesEnabled(){
+                self.manager = CLLocationManager()
+                self.manager.delegate = self
+            }else{
+                print("지도가 꺼져있음")
+            }
         }
     }
     func cheackLocationAuthrization(){
@@ -40,12 +42,10 @@ final class MapViewModel:NSObject,CLLocationManagerDelegate,ObservableObject{
         case .denied:
             print("위치정보 거부")
         case .authorizedAlways, .authorizedWhenInUse:
-            DispatchQueue.main.async {
                 withAnimation(.easeOut){
                         self.mapCoordinate = self.manager.location!.coordinate
                         self.mapRegion = MKCoordinateRegion(center: self.mapCoordinate, span: self.mySpan)
                 }
-            }
         @unknown default:
             break
         }

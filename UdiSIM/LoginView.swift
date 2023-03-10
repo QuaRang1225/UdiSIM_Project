@@ -12,6 +12,7 @@ struct LoginView: View {
     @State var password:String = ""
     @EnvironmentObject var vm:AuthenticationViewModel
     var body: some View {
+       
             ZStack{
                 LinearGradient.udisimColor.ignoresSafeArea()
                 VStack(spacing:30){
@@ -24,6 +25,7 @@ struct LoginView: View {
                     regisetTransferButton
                 }
             }.ignoresSafeArea()
+        
             .navigationBarHidden(true)
         
     }

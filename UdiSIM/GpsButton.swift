@@ -9,7 +9,9 @@ import SwiftUI
 import CoreLocationUI
 
 struct GpsButton: View {
-    let action:()->()
+    
+    let action: ()->()
+    
     var body: some View {
         HStack{
             Spacer()

@@ -33,14 +33,7 @@ struct Location:Codable,Identifiable{
     var coordinate:CLLocationCoordinate2D{
         return CLLocationCoordinate2D(latitude:CLongDouble(floatLiteral: coordinateLat), longitude: CLongDouble(floatLiteral: coordinateLong))
     }
-//    enum LocationCodingKey:String,CodingKey{
-//
-//        case id =  "id"
-//        case sendId =  "sendId"
-//        case receiveId = "receiveId"
-//        case coordinateLong = "coordinateLong"
-//        case coordinateLat = "coordinateLat"
-//    }
+
     init(id:String,data: [String:Any]) {
         self.id = id
         self.sendId = data[LocationData.sendId] as? String ?? ""

@@ -23,7 +23,7 @@ struct RegisterView: View {
                 VStack(spacing: 20){
                     
                     AuthHeaderView(title: "회원가입")
-                    NavigationLink(destination: ProfileSelectView(), isActive: $vm.successAuth, label: {})
+                    
                     Spacer()
                     Group{
                         CustomInputView(imageName: "person", placeholderText: "이메일", text: $email)
@@ -38,7 +38,10 @@ struct RegisterView: View {
                 }
                 
                 
-            }.ignoresSafeArea()
+            }.navigationDestination(isPresented:  $vm.successRegister, destination: {
+                ProfileSelectView(name: $name, email: $email, password: $password)
+            })
+            .ignoresSafeArea()
         
     }
 }
@@ -52,7 +55,7 @@ extension RegisterView{
     var register:some View{
         Button {
             if password == passwordConfirm{
-                vm.register(email: email, name: name, password: password)
+                vm.successRegister = true
             }else{
                 self.passwordStatus.toggle()
             }

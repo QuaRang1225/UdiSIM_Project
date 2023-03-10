@@ -9,7 +9,9 @@ import SwiftUI
 import PhotosUI
 
 struct ProfileSelectView: View {
-    
+    @Binding var name:String
+    @Binding var email:String
+    @Binding var password:String
     @StateObject var photo = PhotoPicker()
     @EnvironmentObject var vm:AuthenticationViewModel
     
@@ -41,7 +43,8 @@ struct ProfileSelectView: View {
                                         .scaledToFill()
                                         .modifier(imageModifier())
                                     Button {
-                                        vm.imageUpload(image)
+                                        vm.register(email: email, name: name, password: password)
+                                       
                                         print("DEBUG : 회원가입 성공 \(image)")
                                     } label: {
                                         LinearGradient.udisimColor
@@ -55,7 +58,10 @@ struct ProfileSelectView: View {
                                             .clipShape(Capsule())
                                             .padding()
                                     }
+                                    
+                                    
                                     .shadow(radius: 10)
+                                }.onReceive(vm.roginSuccenss){ vm.imageUpload(image)
                                 }
                             }
                         }
@@ -79,7 +85,7 @@ struct ProfileSelectView: View {
 struct ProfileSelectView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ProfileSelectView()
+            ProfileSelectView(name: .constant(""), email: .constant(""), password: .constant(""))
         }
     }
 }

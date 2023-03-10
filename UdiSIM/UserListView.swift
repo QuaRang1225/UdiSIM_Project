@@ -32,7 +32,7 @@ struct UserListView: View {
                             ForEach(vm.searcheUser){ user in
                                 LazyVStack{
                                     Divider()
-                                        NavigationLink {
+                                        NavigationLink{
                                             ChatView(user: user)
                                         } label: {
                                             UserRowView(profileImage: URL(string: user.profileImageUrl), name: user.name,recent: user.email,time:Timestamp(),timeAction: false)

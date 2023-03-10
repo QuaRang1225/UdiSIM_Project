@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import Combine
 
 class AuthenticationViewModel:ObservableObject{
     
@@ -14,14 +15,16 @@ class AuthenticationViewModel:ObservableObject{
     @Published var successAuth = false
     @Published var userdata:UserData?
     @Published var recent:[Recent] = []
+    @Published var isLogOut = false
+    @Published var successRegister = false
     
+    var isRemove = true
     private var tempUserSession:FirebaseAuth.User?
     private var userService = UserSerivce()
+    var roginSuccenss = PassthroughSubject<(),Never>()
     
     init(){
         self.userSession = Auth.auth().currentUser
-        
-        recent.removeAll()
         fetchUser()
         fetchRecentChat()
     }
@@ -43,6 +46,7 @@ class AuthenticationViewModel:ObservableObject{
                     print("DEBUG : 유저정보가 업로드 되었습니다. 프로필 사진 변경")
                 }
         }
+        
     }
     func login(email:String,password:String){
         Auth.auth().signIn(withEmail: email, password: password){ result, error in
@@ -52,6 +56,9 @@ class AuthenticationViewModel:ObservableObject{
             }
             guard let user = result?.user else{ return }    //유저정보가 비어있다면 반환
             self.userSession = user
+            self.fetchUser()
+            self.recent.removeAll()
+            self.fetchRecentChat()
             print("로그인 성공")
         }
     }
@@ -70,21 +77,20 @@ class AuthenticationViewModel:ObservableObject{
     func logOut(){
         userSession = nil
         try? Auth.auth().signOut()
+        print("로그아웃됨")
+        
     }
-    
-    
     
     func fetchUser(){       //유저정보 데이터 모델에 저장
         guard let uid = self.userSession?.uid else {return}
         userService.fetchUser(uid: uid){ snapshot in
             self.userdata = snapshot
         }
-
     }
     
-    private func fetchRecentChat(){
-        guard let uid = Auth.auth().currentUser?.uid else{return}
-
+    func fetchRecentChat(){
+        guard let uid = Auth.auth().currentUser?.uid else{ return }
+        
         Firestore.firestore()
             .collection("recent")
             .document(uid)
@@ -94,24 +100,19 @@ class AuthenticationViewModel:ObservableObject{
                 if let error = error{
                     print("에러메세지 : \(error.localizedDescription)")
                 }
-                querySnapshot?.documentChanges.forEach({ change in
-                        let docId = change.document.documentID
-                        if let index = self.recent.firstIndex(where: { rm in
-                            return rm.id == docId
-                        }){
-                            self.recent.remove(at: index)
-                        }
-                        try? self.recent.insert(change.document.data(as: Recent.self),at: 0)
+                querySnapshot?.documentChanges.forEach({ [weak self] (change) in
+                    let docId = change.document.documentID
+                    print("이게 뭘끼? \(docId)")
+                    if let index = self?.recent.firstIndex(where: { $0.id == docId }){
+                        self?.recent.remove(at: index)
+                    }
+                    if self!.isRemove{
+                        try? self?.recent.insert(change.document.data(as: Recent.self),at: 0)
+                    }
+                    self?.isRemove = true
                 })
             }
-    }
-    func removeRow(){
         
-        guard let uid = Auth.auth().currentUser?.uid else{return}
-        
-        Firestore.firestore()
-            .collection("recent")
-            .document(uid)
-            .delete()
     }
+    
 }
